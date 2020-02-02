@@ -21,7 +21,7 @@
 
                 
                 
-                $conn=mysqli_connect("localhost","root","","e-flower");
+                $conn=mysqli_connect("localhost","root","640087@m","e-flowerphp");
                 $query="INSERT INTO register(name,email,password) VALUES('$name','$email','$password')";
                 if(mysqli_query($conn,$query)){
                     echo '<script>alert("Registration Successfully Completed!!");location.href="admin/index.php"</script>';
@@ -88,8 +88,9 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12">
                         <div class="barnd-logo text-center ptb-40">
-                            <!-- <a href="index.html" class="logo">
-                                <img src="images/logo.png" class="img-fluid" alt=""> -->
+                            <a href="index.php" class="logo">
+                                <!-- <img src="images/logo.png" class="img-fluid" alt=""> -->
+                                <h1>Flower</h1>
                             </a>
                         </div>
                     </div>
@@ -101,60 +102,29 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-9 col-6 offset-lg-2">
-                        <!-- <nav class="navbar-expand-lg navbar-light">
+                        <nav class="navbar-expand-lg navbar-light">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul id="menubar" class="navbar-nav">
+                                 <ul id="menubar" class="navbar-nav">
                                     <li>
-                                        <a href="index.html">home</a>
-                                        <ul>
+                                        <a href="index.php">home</a>
+                                       <!--  <ul>
                                             <li><a href="index-2.html">home 2</a></li>
                                             <li><a href="index-3.html">home 3</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
-                                    <li>
-                                        <a href="#">pages</a>
-                                        <ul>
-                                            <li><a href="about.html">about me</a></li>
-                                            <li>
-                                                <a href="#">details</a>
-                                                <ul>
-                                                    <li><a href="blog-details.html">detail 1</a></li>
-                                                    <li><a href="blog-details-2.html">detail 2</a></li>
-                                                    <li><a href="blog-detail-slider.html">detail 3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">blogs</a>
-                                                <ul>
-                                                    <li><a href="blog-grid.html">blog 1</a></li>
-                                                    <li><a href="blog-sidebar-left.html">blog 2</a></li>
-                                                    <li><a href="blog-sidebar-left-2.html">blog 3</a></li>
-                                                    <li><a href="blog-sidebar-right.html">blog 4</a></li>
-                                                    <li><a href="blog-sidebar-right-2.html">blog 5</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="gallery.html">gellary</a></li>
-                                            <li><a href="login.html">login</a></li>
-                                            <li><a href="register.html">register</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="javascript:void(0);">Travel Story</a></li>
-                                    <li><a href="gallery.html">gellary</a></li>
-                                    <li><a href="contact.html">contact</a></li>
+                                     <li><a href="admin/index.php">Admin Panel</a></li>
+                                        
                                 </ul>
+                                 
                             </div>
                         </nav>
                     </div>
                     <div class="col-lg-2 col-md-3 col-6 trvel-user">
                         <ul class="d-flex justify-content-end">
-                            <li class="lang">Eng <i class="fa fa-angle-down"></i>
-                                <ul>
-                                    <li>Ban</li>
-                                </ul>
-                            </li>
+                            
                             <li class="blog-src-btn">
                                 <a href="javascript:void(0);"><i class="fa fa-search"></i></a>
                                 <ul  class="blog-secrch">
@@ -171,11 +141,11 @@
                             <li class="user-option">
                                 <i class="fa fa-user"></i>
                                 <ul>
-                                    <li><a href="login.html"><i class="fa fa-sign-in"></i> Login</a></li>
-                                    <li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li>
+                                    <li><a href="login.php"><i class="fa fa-sign-in"></i> Login</a></li>
+                                    <li><a href="register.php"><i class="fa fa-pencil-square-o"></i> Register</a></li>
                                 </ul>
                             </li>
-                        </ul> -->
+                        </ul>
                     </div>
                 </div>
             </div>

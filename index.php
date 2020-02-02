@@ -137,7 +137,7 @@
 
         <?php
 
-    $conn=mysqli_connect("localhost","root","","e-flower");
+    $conn=mysqli_connect("localhost","root","640087@m","e-flowerphp");
     $query = "select * from flower";
     $result = mysqli_query($conn,$query);
 

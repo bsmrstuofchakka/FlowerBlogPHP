@@ -1,3 +1,29 @@
+<?php
+
+
+
+    $conn=mysqli_connect("localhost","root","640087@m","e-flowerphp");
+      if (isset($_GET['id'])) {
+        $id=$_GET['id'];
+        // print_r($id);
+        $query = "select * from flower where id='$id'";
+        $result = mysqli_query($conn,$query);
+        $row = mysqli_fetch_assoc($result);
+    }
+    
+
+
+
+?>
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -31,37 +57,6 @@
 
 <body>
 
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!-- ================ Start Header Section ================ -->
-<!--     <header class="header">
-        <div class="top-header bg-1 txt-clr-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-3 d-sm-block d-none">
-                        <div class="top-bar-article fz-16">
-                            Latest Article
-                            <span><i class="fa fa-angle-right"></i></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 fw-3 fz-14 top-hdr-padding d-none d-lg-block">
-                        <span class="top-bar-article-text"> It is a long established fact that a reader will be distracted by...</span>
-                    </div>
-                    <div class="col-lg-5 col-md-9 col-sm-9 col-12 top-hdr-padding">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <span><i class="fa fa-envelope"></i></span> ghoraghuri@gmail.com
-                            </li>
-                            <li class="list-inline-item">
-                                <span><i class="fa fa-mobile"></i></span> 013 768 9475 574
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class="bottom-header">
             <div class="container">
                 <div class="row">
@@ -89,52 +84,17 @@
                                 <ul id="menubar" class="navbar-nav">
                                     <li>
                                         <a href="index.php">home</a>
-                                       <!--  <ul>
-                                            <li><a href="index-2.html">home 2</a></li>
-                                            <li><a href="index-3.html">home 3</a></li>
-                                        </ul> -->
+                                     
                                     </li>
                                      <li><a href="admin/index.php">Admin Panel</a></li>
-                                        <!-- <a href="#">pages</a>
-                                        <ul>
-                                            <li><a href="admin/index.html">Admin Panel</a></li> -->
-                                           <!--  <li>
-                                                <a href="#">details</a>
-                                                <ul>
-                                                    <li><a href="blog-details.html">detail 1</a></li>
-                                                    <li><a href="blog-details-2.html">detail 2</a></li>
-                                                    <li><a href="blog-detail-slider.html">detail 3</a></li>
-                                                </ul>
-                                            </li> -->
-                                       <!--      <li>
-                                                <a href="#">blogs</a>
-                                                <ul>
-                                                    <li><a href="blog-grid.html">blog 1</a></li>
-                                                    <li><a href="blog-sidebar-left.html">blog 2</a></li>
-                                                    <li><a href="blog-sidebar-left-2.html">blog 3</a></li>
-                                                    <li><a href="blog-sidebar-right.html">blog 4</a></li>
-                                                    <li><a href="blog-sidebar-right-2.html">blog 5</a></li>
-                                                </ul>
-                                            </li> -->
-                                       <!--      <li><a href="gallery.html">gellary</a></li> -->
-                                         <!--    <li><a href="login.html">login</a></li>
-                                            <li><a href="register.html">register</a></li>
-                                        </ul> -->
-                                    
-                                    <!-- <li><a href="javascript:void(0);">Travel Story</a></li>
-                                    <li><a href="gallery.html">gellary</a></li>
-                                    <li><a href="contact.html">contact</a></li> -->
+                           
                                 </ul>
                             </div>
                         </nav>
                     </div>
                     <div class="col-lg-2 col-md-3 col-6 trvel-user">
                         <ul class="d-flex justify-content-end">
-                            <li class="lang">Eng <i class="fa fa-angle-down"></i>
-                                <ul>
-                                    <li>Ban</li>
-                                </ul>
-                            </li>
+                           
                             <li class="blog-src-btn">
                                 <a href="javascript:void(0);"><i class="fa fa-search"></i></a>
                                 <ul  class="blog-secrch">
@@ -186,182 +146,35 @@
         <div class="blog-area bg-2">
             <div class="container">
                 <div class="row wrap-reverse">
-                    <div class="col-lg-4">
-                        <!-- Start categoris -->
-                        <!-- <div class="blog-sidebar-section">
-                            <div class="blog-sidebar-title">
-                                <h5 class="fw-7 fz-18">Category</h5>
-                            </div>
-
-                            <div id="accordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingone">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseone" aria-expanded="false" aria-controls="collapseone">Asia</button>
-                                    </div>
-                                    <div id="collapseone" class="collapse" aria-labelledby="headingone" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 2</a></li>
-                                                <li><a href="#">ITEM 3</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Europe</button>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 2</a></li>
-                                                <li><a href="#">ITEM 3</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Africa
-                                        </button>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 2</a></li>
-                                                <li><a href="#">ITEM 3</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingfour">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                                        America
-                                        </button>
-                                    </div>
-                                    <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 2</a></li>
-                                                <li><a href="#">ITEM 3</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingfive">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
-                                        North America
-                                        </button>
-                                    </div>
-                                    <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 2</a></li>
-                                                <li><a href="#">ITEM 3</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingsix">
-                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
-                                        West America
-                                        </button>
-                                    </div>
-                                    <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 2</a></li>
-                                                <li><a href="#">ITEM 3</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                                <li><a href="#">ITEM 1</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                            
-                        </div> -->
-
-                        <!-- Start sidebar banner -->
-                        <div class="sidebar-banner mt-30">
-                            <ul>
-                                <li><a href="#"><img src="images/blog-layout/f02.jpg" alt="" class="img-fluid"></a></li>
-                                <li class="mt-30"><a href="#"><img src="images/blog-layout/f03.jpg" alt="" class="img-fluid"></a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Start tags -->
-                        <div class="blog-sidebar-section mt-30">
-                            <div class="blog-sidebar-title">
-                                <!-- <h5 class="fw-7 fz-18">Tag</h5>
- -->                            </div>
-                            <!-- <div class="tags">
-                                <a href="#">Travel</a>
-                                <a href="#">Tour</a>
-                                <a href="#">Country</a>
-                                <a href="#">World</a>
-                                <a href="#">Asia</a>
-                                <a href="#">Hill</a>
-                                <a href="#">Sea</a>
-                                <a href="#">Forest</a>
-                                <a href="#">River</a>
-                                <a href="#">Tradition</a>
-                                <a href="#">Enjoy</a>
-                            </div>   -->                        
-                        </div>
-
-                        <!-- Start instagram -->
-                        <div class="blog-sidebar-section mt-30">
-                            <div class="blog-sidebar-title">
-                                <h5 class="fw-7 fz-18">Instragram</h5>
-                            </div>
-                            <div class="instagram">
-                                <a href="#"><img src="images/blog-layout/f01.jpg" alt="" class="img-fluid"></a>
-                                <a href="#"><img src="images/blog-layout/f02.jpg" alt="" class="img-fluid"></a>
-                                <a href="#"><img src="images/blog-layout/f03.jpg" alt="" class="img-fluid"></a>
-                                <a href="#"><img src="images/blog-layout/f04.jpg" alt="" class="img-fluid"></a>
-                                <a href="#"><img src="images/blog-layout/f05.jpg" alt="" class="img-fluid"></a>
-                                <a href="#"><img src="images/blog-layout/f06.jpg" alt="" class="img-fluid"></a>
-                         
-                            </div>                        
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
+                    
+                    <div style="width: 100%;" class="col-lg-8">
+                        
+                
+               
                         <!-- Start article section -->
+
+
+
                         <div class="article">
-                            <img src="images/blog-layout/f01.jpg" alt="" class="img-fluid">
+                            <img src="admin/<?php echo $row['image'] ?>" alt="" class="img-fluid">
+                          
                             <ul class="article-user-info">
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-user"></i> Admin Post</a></li>
                                 <li class="list-inline-item ml-10"><a href="#"><i class="fa fa-comment"></i> 24 Comments</a></li>
                                 <li class="list-inline-item pull-right"><a href="#"><i class="fa fa-heart"></i> 30 Likes</a></li>
                             </ul>
-                            <h4 class="mtb-20"><a href="#">There are many variations of passages of Lorem Ipsum.</a></h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
-                            <p class="mt-20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                            <img src="images/blog-layout/f04.jpg" alt="" class="img-fluid mt-30">
-                            <p class="mt-30">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
-                            <p class="mt-20">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-                            <img src="images/blog-layout/f05.jpg" alt="" class="img-fluid mt-30">
+                            <!-- <h3><a href="#"><?php echo $row['title']; ?></a></h3> -->
+                            <h4 class="mtb-20"><a href="#"><?php echo $row['title']; ?></a></h4>
+                            <p><?php echo $row['description']; ?></p>
+                            
+                            
+
+                            
+
                         </div>
+
+
+
                         <!-- start comment area -->
                         <div class="row">
                             <div class="col-lg-12">
