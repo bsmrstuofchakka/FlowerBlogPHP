@@ -83,7 +83,7 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul id="menubar" class="navbar-nav">
                                     <li>
-                                        <a href="index.php">home</a>
+                                        <a href="index.php">Home</a>
                                      
                                     </li>
                                      <li><a href="admin/index.php">Admin Panel</a></li>
@@ -111,8 +111,8 @@
                             <li class="user-option">
                                 <i class="fa fa-user"></i>
                                 <ul>
-                                    <li><a href="login.html"><i class="fa fa-sign-in"></i> Login</a></li>
-                                    <li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Register</a></li>
+                                    <li><a href="login.php"><i class="fa fa-sign-in"></i> Login</a></li>
+                                    <li><a href="register.php"><i class="fa fa-pencil-square-o"></i> Register</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -159,9 +159,7 @@
                             <img src="admin/<?php echo $row['image'] ?>" alt="" class="img-fluid">
                           
                             <ul class="article-user-info">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-user"></i> Admin Post</a></li>
                                 <li class="list-inline-item ml-10"><a href="#"><i class="fa fa-comment"></i> 24 Comments</a></li>
-                                <li class="list-inline-item pull-right"><a href="#"><i class="fa fa-heart"></i> 30 Likes</a></li>
                             </ul>
                             <!-- <h3><a href="#"><?php echo $row['title']; ?></a></h3> -->
                             <h4 class="mtb-20"><a href="#"><?php echo $row['title']; ?></a></h4>
@@ -172,18 +170,75 @@
                             
 
                         </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="comment-area">
 
+                                    <?php
+                                    $queryC = "select * from  comment where blogId='$id'";
+                                    $resultC = mysqli_query($conn,$queryC);
+
+                                    ?>
+
+                                    <h5>Comment List</h5>
+
+                                    <?php
+
+                                    while ($rowC = mysqli_fetch_assoc($resultC)) { ?>
+                                    <div>
+                                    <div class="form-group row mb-30">
+                                        <div class="col-lg-6">
+                                            <p><?php echo $rowC['cName']; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-12">
+                                            <pre><?php echo $rowC['message']; ?></pre>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <?php }?>
+                                </div>
+                            </div>
+                        </div>
 
 
                         <!-- start comment area -->
+
+                        <?php
+
+                        if(isset($_POST['submit'])) {
+
+//                            print_r($_POST);
+                            $name = $_POST['cName'];
+                            $mail = $_POST['email'];
+                            $massage = $_POST['massage'];
+                            $queryC = "INSERT INTO comment(blogId,cName,mail,message) VALUES('$id','$name','$mail','$massage')";
+
+//                            print_r($queryC);
+                            if (mysqli_query($conn, $queryC)) {
+
+//                                echo  '<div ... onclick="location.href=\''.($id).'\';">..</div>';
+                                echo '<script>alert("Successful!!");</script>';
+
+                            } else {
+                                echo '<script>alert("Unsuccessful!!");location.href="blog-details.php?id=<?php echo $id;?>";</script>';
+                            }
+                        }
+
+                        ?>
+
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="comment-area">
                                     <h5>Leave A Comment</h5>
-                                    <form>
-                                        <div class="form-group row mb-30">
+                                    <form  method="POST" action="blog-details.php?id=<?php echo $id;?>" enctype="multipart/form-data">
+
+                                    <div class="form-group row mb-30">
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control form-control-input" placeholder="Your Name" name="name">
+                                                <input type="text" class="form-control form-control-input" placeholder="Your Name" name="cName">
                                             </div>
                                             <div class="col-lg-6">
                                                 <input type="email" class="form-control form-control-input" placeholder="Your Mail" name="email">
@@ -191,12 +246,12 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-12">
-                                                <textarea class="form-control" placeholder="Your Massage" name="massage" rows="8"></textarea>
+                                                <textarea class="form-control" placeholder="Your Comment" name="massage" rows="8"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row mt-30">
                                             <div class="col-lg-6">
-                                                <button type="submit" class="btn btn-primary comment-submit-btn">Submit</button>
+                                                <button type="submit" name="submit" class="btn btn-primary comment-submit-btn">Submit</button>
                                             </div>
                                         </div>
                                     </form>
@@ -247,7 +302,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary subscribe-btn bg-1">subscribe</button>
                     </form>
-                    <p class="fz-14 mt-30">© 2018 All Right Reserved By GhoraGhuri</p>
+                    <p class="fz-14 mt-30">© <?php echo date('Y')?> All Right Reserved</p>
                 </div>
                 <div class="col-lg-3 ftr-link">
                     <div class="ftr-title pt-15 mb-35">

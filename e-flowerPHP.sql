@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 31, 2020 at 08:09 PM
+-- Generation Time: Feb 09, 2020 at 04:33 PM
 -- Server version: 5.7.21
--- PHP Version: 5.6.35
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,67 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `e-flower`
+-- Database: `e-flowerphp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `blogId` int(255) NOT NULL,
+  `cName` varchar(255) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `message` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `blogId`, `cName`, `mail`, `message`) VALUES
+(24, 23, 'admin13', 'admin13@gmail.com', 'admin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.com'),
+(23, 23, 'admin15', 'admin15@gmail.com', 'admin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.com'),
+(22, 23, 'admin15', 'admin15@gmail.com', 'admin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.com'),
+(21, 23, 'admin15', 'admin15@gmail.com', 'admin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.com'),
+(20, 23, 'admin15', 'admin15@gmail.com', 'admin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.comadmin15@gmail.com'),
+(19, 23, 'admin17', 'admin17@gmail.com', 'admin17@gmail.comadmin17@gmail.comadmin17@gmail.comadmin17@gmail.comadmin17@gmail.comadmin17@gmail.comadmin17@gmail.com'),
+(18, 23, 'admin16', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(17, 23, 'admin12', 'admin12@gmail.com', 'admin12@gmail.comadmin12@gmail.comadmin12@gmail.comadmin12@gmail.comadmin12@gmail.comadmin12@gmail.comadmin12@gmail.comadmin12@gmail.com'),
+(25, 23, 'admin13', 'admin13@gmail.com', 'admin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.com'),
+(26, 18, 'admin11', 'admin11@gmail.com', 'admin11@gmail.comadmin11@gmail.comadmin11@gmail.comadmin11@gmail.comadmin11@gmail.comadmin11@gmail.comadmin11@gmail.comadmin11@gmail.com'),
+(27, 18, 'admin10', 'admin10@gmail.com', 'admin10@gmail.comadmin10@gmail.comadmin10@gmail.comadmin10@gmail.comadmin10@gmail.comadmin10@gmail.comadmin10@gmail.comadmin10@gmail.comadmin10@gmail.com'),
+(28, 18, 'admin18', 'admin18@gmail.com', 'admin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.com'),
+(29, 18, 'admin18', 'admin18@gmail.com', 'admin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.com'),
+(30, 18, 'admin18', 'admin18@gmail.com', 'admin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.com'),
+(31, 18, 'admin18', 'admin18@gmail.com', 'admin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.comadmin18@gmail.com'),
+(32, 20, 'admin20', 'admin20@gmail.com', 'admin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.com'),
+(33, 20, 'admin20', 'admin20@gmail.com', 'admin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.com'),
+(34, 20, 'admin20', 'admin20@gmail.com', 'admin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.com'),
+(35, 20, 'admin20', 'admin20@gmail.com', 'admin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.comadmin20@gmail.com'),
+(36, 20, '', '', ''),
+(37, 20, 'admin13', 'admin13@gmail.com', 'admin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.com'),
+(38, 20, 'admin13', 'admin13@gmail.com', 'admin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.com'),
+(39, 20, 'admin13', 'admin13@gmail.com', 'admin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.com'),
+(40, 20, 'admin13', 'admin13@gmail.com', 'admin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.comadmin13@gmail.com'),
+(41, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(42, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(43, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(44, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(45, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(46, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(47, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(48, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(49, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(50, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(51, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(52, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com'),
+(53, 20, 'admin13', 'admin16@gmail.com', 'admin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.comadmin16@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -56,27 +115,20 @@ INSERT INTO `flower` (`id`, `title`, `description`, `image`) VALUES
 
 DROP TABLE IF EXISTS `register`;
 CREATE TABLE IF NOT EXISTS `register` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `register`
 --
 
-INSERT INTO `register` (`name`, `email`, `password`) VALUES
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
-('karima jaman moon', 'karimajaman9876@gmail.com', '4566@567');
+INSERT INTO `register` (`id`, `name`, `email`, `password`) VALUES
+(1, 'karima jaman moon', 'karimajaman9876@gmail.com', '4566@567'),
+(12, 'Md. Murad Hossain', 'muradmd312@gmail.com', 'muradmd312@gmail.com');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

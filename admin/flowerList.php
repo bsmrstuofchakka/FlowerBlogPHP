@@ -1,6 +1,6 @@
 <?php
 
-    $conn=mysqli_connect("localhost","root","","e-flower");
+    $conn=mysqli_connect("localhost","root","640087@m","e-flowerphp");
     $query = "select * from flower";
     $result = mysqli_query($conn,$query);
 
@@ -108,6 +108,12 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Flower List</span></a>
         </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="../index.php">
+                  <i class="fas fa-fw fa-tachometer-alt"></i>
+                  <span>Home</span>
+              </a>
+          </li>
       </ul>
 
       <div id="content-wrapper">

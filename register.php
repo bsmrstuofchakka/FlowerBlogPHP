@@ -199,11 +199,11 @@
                                         </div>
                                         <div class="form-group mt-30">
                                             <label>Password</label>
-                                            <input type="email" name="pass" class="form-control" placeholder="Your Password..">
+                                            <input type="password" name="pass" class="form-control" placeholder="Your Password..">
                                         </div>
                                         <div class="form-group mt-30">
                                             <label>Confirm Password</label>
-                                            <input type="email" name="confrim" class="form-control" placeholder="Password Again..">
+                                            <input type="password" name="confrim" class="form-control" placeholder="Password Again..">
                                         </div>
                                         <button type="submit" name="submit" class="btn btn-primary btn-block reg-btn">Submit Now</button>
                                     </form>
